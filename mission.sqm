@@ -5,23 +5,75 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=513;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
+	class ItemIDProvider
+	{
+		nextID=56;
+	};
 	class Camera
 	{
-		pos[]={750.90454,286.3725,1085.6582};
-		dir[]={0.27022654,-0.75195342,0.60128498};
-		up[]={0.30824149,0.65921623,0.68587255};
-		aside[]={0.91212106,0,-0.40992096};
+		pos[]={504.44009,31.203157,1538.1805};
+		dir[]={0.63688457,-0.33121088,-0.69618827};
+		up[]={0.22356167,0.94355655,-0.24437849};
+		aside[]={-0.73783433,3.1315722e-008,-0.67498332};
 	};
 };
 binarizationWanted=0;
 sourceName="islandDivers";
+addons[]=
+{
+	"CUP_CAStructures_Nav_pier",
+	"A3_Structures_F_Naval_Piers",
+	"A3_Characters_F",
+	"A3_Structures_F_Civ_Constructions",
+	"A3_Boat_F_Boat_Transport_01"
+};
 class AddonsMetaData
 {
+	class List
+	{
+		items=4;
+		class Item0
+		{
+			className="CUP_CAStructures_Nav_pier";
+			name="CUP_CAStructures_Nav_pier";
+		};
+		class Item1
+		{
+			className="A3_Structures_F";
+			name="Arma 3 - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item2
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item3
+		{
+			className="A3_Boat_F";
+			name="Arma 3 Alpha - Boats and Submersibles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+class DynamicSimulation
+{
+	class EnableRadiuses
+	{
+		Prop=250;
+		EmptyVehicle=400;
+		Vehicle=500;
+		Group=750;
+	};
 };
 randomSeed=15203030;
 class ScenarioData
@@ -29,6 +81,7 @@ class ScenarioData
 	author="jim_0316";
 	overviewText="Unleash your diving prowess and embark on a high-stakes mission. Clear the island, rescue civilians, and dismantle enemy communication. The fate of lives and the island's future rests in your hands. Dive in, conquer, and secure salvation.";
 	overViewPicture="armaDiversMission\Pictures\loadingScreen.jpg";
+	wreckRemovalMaxTime=3600;
 };
 class CustomAttributes
 {
@@ -108,12 +161,201 @@ class Mission
 		forecastWind=0.1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
-		year=2020;
-		month=3;
-		day=5;
-		hour=11;
-		minute=0;
+		year=2023;
+		month=8;
+		day=7;
+		hour=13;
+		minute=-23;
 		startFogDecay=0.014;
 		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=7;
+		class Item0
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={90.761276,-18.397205,1964.403};
+				angles[]={0,5.9775195,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=36;
+			type="Land_nav_pier_m_2";
+			atlOffset=9.8067856;
+		};
+		class Item1
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={68.634521,-18.424389,1957.42};
+				angles[]={0,5.9775195,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=38;
+			type="land_nav_pier_m_end";
+			atlOffset=9.7796021;
+		};
+		class Item2
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={70.588005,2.3976295,1963.7667};
+				angles[]={0,4.40275,-0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=40;
+			type="Land_PierLadder_F";
+			atlOffset=13.099169;
+		};
+		class Item3
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={107.20338,5.0442247,1969.8356};
+						angles[]={0,4.3892527,-0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						skill=1;
+						rank="COLONEL";
+						isPlayer=1;
+					};
+					id=42;
+					type="B_diver_TL_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male08ENG";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="enableStamina";
+							expression="_this enablestamina _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=4;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=41;
+		};
+		class Item4
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={58.061394,2.4208109,1962.9304};
+				angles[]={0,4.4175549,0};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=10;
+			type="Land_Pier_addon";
+			atlOffset=9.9274607;
+		};
+		class Item5
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={67.837296,5.7111301,1952.9359};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=49;
+			type="Land_IronPipes_F";
+		};
+		class Item6
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={61.766136,1.2435327,1968.8186};
+				angles[]={0,0.31587523,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=55;
+			type="B_Boat_Transport_01_F";
+			atlOffset=10.75;
+		};
 	};
 };
